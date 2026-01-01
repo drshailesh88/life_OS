@@ -1,0 +1,21 @@
+{
+  "name": "firefly-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for Firefly III financial management",
+  "type": "module",
+  "main": "server.js",
+  "bin": {
+    "firefly-mcp": "./server.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["mcp", "firefly-iii", "finance", "claude"],
+  "author": "Life OS",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "axios": "^1.6.0"
+  }
+}

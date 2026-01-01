@@ -1,0 +1,123 @@
+{
+  "name": "Daily Briefing Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 8 * * *"
+            }
+          ]
+        }
+      },
+      "name": "Every Morning at 8am",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Generate daily briefing prompt\nconst date = new Date().toISOString().split('T')[0];\nconst dayOfWeek = new Date().toLocaleDateString('en-US', { weekday: 'long' });\n\nreturn {\n  json: {\n    date: date,\n    dayOfWeek: dayOfWeek,\n    prompt: `Give me my daily briefing for ${dayOfWeek}, ${date}`\n  }\n};"
+      },
+      "name": "Prepare Briefing Prompt",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "claudeApi",
+        "resource": "message",
+        "operation": "create",
+        "model": "claude-sonnet-4-5-20250929",
+        "text": "={{ $json.prompt }}",
+        "options": {}
+      },
+      "name": "Claude API",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1,
+      "position": [650, 300],
+      "credentials": {
+        "claudeApi": {
+          "id": "1",
+          "name": "Claude API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "accessToken",
+        "resource": "page",
+        "operation": "create",
+        "databaseId": "={{ $env.NOTION_DAILY_LOGS_DB }}",
+        "properties": {
+          "property": [
+            {
+              "key": "Date",
+              "type": "date",
+              "date": "={{ $json.date }}"
+            },
+            {
+              "key": "Content",
+              "type": "richText",
+              "richText": "={{ $node['Claude API'].json.content }}"
+            }
+          ]
+        }
+      },
+      "name": "Create Daily Log in Notion",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [850, 300],
+      "credentials": {
+        "notionApi": {
+          "id": "2",
+          "name": "Notion API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "name": "Send Email (Optional)",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [850, 480],
+      "disabled": true,
+      "credentials": {
+        "smtp": {
+          "id": "3",
+          "name": "SMTP"
+        }
+      },
+      "notes": "Enable to receive briefing via email"
+    }
+  ],
+  "connections": {
+    "Every Morning at 8am": {
+      "main": [[{ "node": "Prepare Briefing Prompt", "type": "main", "index": 0 }]]
+    },
+    "Prepare Briefing Prompt": {
+      "main": [[{ "node": "Claude API", "type": "main", "index": 0 }]]
+    },
+    "Claude API": {
+      "main": [
+        [
+          { "node": "Create Daily Log in Notion", "type": "main", "index": 0 },
+          { "node": "Send Email (Optional)", "type": "main", "index": 0 }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "versionId": "1",
+  "meta": {
+    "instanceId": "your_instance_id"
+  },
+  "tags": []
+}
