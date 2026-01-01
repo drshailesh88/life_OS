@@ -8,12 +8,14 @@ A comprehensive, AI-powered system that manages every aspect of your life throug
 
 Life OS is a complete personal management system that:
 - 🧠 **Captures and connects knowledge** (notes, ideas, learning)
+- 🔍 **Semantic search** (find anything across all your knowledge with AI)
 - 💰 **Tracks and optimizes finances** (budgets, spending, net worth)
+- 📈 **Teaches investing** (learn with real market data, stock analysis)
 - ✅ **Manages projects and tasks** (efforts, priorities, workflows)
 - 🎯 **Builds lasting habits** (streaks, patterns, identity-based)
 - 📊 **Discovers insights** (correlations, patterns, optimizations)
 - 🎤 **Processes voice notes** (transcription, categorization, automation)
-- 📈 **Tracks progress** (daily logs, weekly reviews, analytics)
+- 📝 **Tracks progress** (daily logs, weekly reviews, analytics)
 
 All controlled through natural language conversations with Claude.
 
@@ -116,9 +118,26 @@ See: [docs/NOTION_SCHEMAS.md](./docs/NOTION_SCHEMAS.md)
 "What patterns do you see?"
 ```
 
+### Digital Brain
+
+**Semantic Search:**
+```
+"Search my knowledge: habit formation"
+"What have I written about investing?"
+"Based on my notes, what works for building habits?"
+```
+
+**Investment Learning:**
+```
+"Teach me about dividend investing"
+"Explain P/E ratios with real examples"
+"Analyze AAPL stock for me"
+"Compare AAPL vs MSFT"
+```
+
 ---
 
-## 🎯 Skills (11 Total)
+## 🎯 Skills (13 Total)
 
 ### Core Workflows
 - **brain-dump** - Process unstructured thoughts → organized entries
@@ -136,6 +155,10 @@ See: [docs/NOTION_SCHEMAS.md](./docs/NOTION_SCHEMAS.md)
 - **daily-check-in** - Evening reflection and wrap-up
 - **habit-tracker** - Streak management, pattern detection
 - **life-analytics** - Cross-system insights and correlations
+
+### Digital Brain
+- **khoj-search** - Semantic search across all your knowledge
+- **stock-teacher** - Learn investing with real market data
 
 ---
 
@@ -170,6 +193,8 @@ See: [docs/NOTION_SCHEMAS.md](./docs/NOTION_SCHEMAS.md)
 **MCP Servers:**
 - Notion MCP - Official Notion integration
 - Finance MCP - Firefly III integration (natural language expense logging)
+- Khoj MCP - Semantic search across all your knowledge (search, chat, research)
+- OpenBB MCP - Financial intelligence and market data (10 tools for stocks, analysis)
 
 **Voice Processing:**
 - Scriberr - Automatic transcription
