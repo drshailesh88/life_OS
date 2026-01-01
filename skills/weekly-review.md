@@ -23,6 +23,18 @@ You are conducting a weekly review. This is a sacred time for reflection and pla
 - Budget status
 - Notable transactions
 
+**From OpenBB (if MCP available):**
+- Portfolio performance for the week
+- Week's market performance (S&P, Nasdaq, Dow)
+- Holdings performance (if tracked)
+- Any significant market events
+
+**From Khoj (if MCP available):**
+- Notes created this week (themes and topics)
+- Learning momentum (what you researched)
+- Knowledge connections made
+- Active learning paths
+
 **From Context Files:**
 - `contexts/current-focus.md` - Check stated priorities
 - `contexts/profile.md` - Remember goals and values
@@ -213,6 +225,8 @@ If user likes structure:
 
 ## 💰 Financial Review
 
+### Spending
+
 **Spending This Week:** $[amount]
 **Budget:** $[weekly budget] ([X]% used)
 
@@ -227,6 +241,82 @@ If user likes structure:
 
 **Notable Transactions:**
 - [Unusual or significant expense with context]
+
+### Portfolio & Investments [If OpenBB available]
+
+**Portfolio Performance This Week:**
+- Starting Value: $[Monday open]
+- Ending Value: $[Friday close]
+- Week's Change: [+/-]$[amount] ([+/-]X%)
+
+**Market Context:**
+- S&P 500: [+/-]X% this week
+- Your Portfolio vs. Market: [Outperformed/Inline/Underperformed]
+
+**Individual Holdings:**
+- Best Performer: [Symbol] ([+/-]X%)
+- Worst Performer: [Symbol] ([+/-]X%)
+- [If significant news: Brief context]
+
+**Month-to-Date:**
+- Portfolio: [+/-]X%
+- Total Gain/Loss YTD: [amount]
+
+**Investment Actions This Week:**
+- [Any buys/sells executed]
+- [DCA investments made]
+- [Rebalancing actions]
+
+**Insights:**
+- [Is strategy on track?]
+- [Any concerning trends?]
+- [Opportunities identified?]
+
+### Net Worth Summary
+
+**Total Net Worth:** $[amount]
+- Change from last week: [+/-]$[amount] ([+/-]X%)
+- Change from last month: [+/-]$[amount] ([+/-]X%)
+- Progress toward goal: [X% to $[goal]]
+
+---
+
+## 📚 Knowledge & Learning [If Khoj available]
+
+**Notes Created This Week:** [X] notes
+
+**Key Themes:**
+- [Theme 1]: [X] notes
+- [Theme 2]: [Y] notes
+- [Theme 3]: [Z] notes
+
+**Learning Momentum:**
+[Use khoj_chat: "What topics did I actively research this week?"]
+- Active topic: [Topic you've been diving into]
+- Depth: [Beginner/Intermediate/Advanced level]
+- Connection to goals: [How this relates to current-focus]
+
+**Knowledge Connections Made:**
+[Use khoj_search for notes with new connections]
+- [Note A] ← → [Note B]: [Why this connection matters]
+- [Emerging pattern or insight from connections]
+
+**Notes by Category:**
+- 💡 Concepts/Frameworks: [X]
+- 📊 Data/Research: [Y]
+- 🔧 How-To/Practical: [Z]
+- 🤔 Questions/Exploration: [W]
+
+**Growth Indicators:**
+- Total notes: [Current count] (↑[X] from last week)
+- Evergreen notes (🌲): [Count] (mature knowledge)
+- Active learning paths: [Topics you're building knowledge in]
+
+**Suggested Focus for Next Week:**
+[Based on note patterns]
+- [Topic that needs more development]
+- [Promising thread to continue]
+- [Question to explore deeper]
 
 ---
 
