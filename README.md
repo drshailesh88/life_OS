@@ -135,9 +135,17 @@ See: [docs/NOTION_SCHEMAS.md](./docs/NOTION_SCHEMAS.md)
 "Compare AAPL vs MSFT"
 ```
 
+**Portfolio Guidance:**
+```
+"Review my portfolio"
+"Should I rebalance?"
+"Help me decide between VTI and VOO"
+"What's happening in the market today?"
+```
+
 ---
 
-## 🎯 Skills (13 Total)
+## 🎯 Skills (15 Total)
 
 ### Core Workflows
 - **brain-dump** - Process unstructured thoughts → organized entries
@@ -159,6 +167,8 @@ See: [docs/NOTION_SCHEMAS.md](./docs/NOTION_SCHEMAS.md)
 ### Digital Brain
 - **khoj-search** - Semantic search across all your knowledge
 - **stock-teacher** - Learn investing with real market data
+- **investment-advisor** - Portfolio analysis and investment guidance
+- **market-snapshot** - Daily market overview and news
 
 ---
 
