@@ -300,3 +300,99 @@ Create a page with:
 **Time Estimate:** 2-3 hours to create all databases and views.
 
 **Pro Tip:** Create one database completely, then duplicate and modify for similar structures to save time.
+
+---
+
+## System Databases
+
+### 11. 🎯 Decisions Database
+
+**Purpose:** Track major decisions, learn from outcomes, improve decision quality.
+
+| Property | Type | Configuration |
+|----------|------|---------------|
+| Name | Title | Decision title |
+| Category | Select | Options: `Career`, `Financial`, `Life`, `Business` |
+| Status | Select | Options: `🤔 Considering`, `✅ Decided`, `📊 In Progress`, `🎓 Reviewed` |
+| Decision Date | Date | When you decided |
+| Confidence | Number | 1-10 scale |
+| Stakes | Select | Options: `Low`, `Medium`, `High` |
+| Reversible | Checkbox | Can you undo this? |
+| Related Notes | Relation | → Notes database |
+| Related Efforts | Relation | → Efforts database |
+| Review Date | Date | When to review outcome |
+| Outcome Score | Number | 1-10 (after review) |
+| Process Quality | Select | Options: `Good`, `Mixed`, `Poor` |
+| Tags | Multi-select | User-defined |
+| Created | Created time | Auto |
+| Last Edited | Last edited time | Auto |
+
+**Page Content:**
+
+```markdown
+## Context
+[What led to this decision?]
+[Timeline and stakes]
+
+## Options Considered
+### Option 1: [Name]
+**Pros:**
+- [Pro 1]
+- [Pro 2]
+
+**Cons:**
+- [Con 1]
+- [Con 2]
+
+**Score:** X/10
+
+### Option 2: [Name]
+[Same structure]
+
+## Criteria
+1. [Criterion 1] (weight: X/10)
+2. [Criterion 2] (weight: X/10)
+
+## Decision Made
+**Choice:** [What you chose]
+
+**Reasoning:**
+1. [Key reason 1]
+2. [Key reason 2]
+
+**Confidence:** X/10
+
+**Expected Outcome:**
+[What you predict]
+
+## Review (Added Later)
+**Actual Outcome:**
+[What happened]
+
+**What You Got Right:**
+- [Accurate prediction]
+
+**What You Got Wrong:**
+- [Surprise]
+
+**Key Learning:**
+[Lesson from this decision]
+
+**Would You Decide the Same Again?**
+[Yes/No and why]
+```
+
+**Views:**
+- `All Decisions` - Default view
+- `Pending Review` - Filter: Review Date ≤ Today, Status = In Progress
+- `Career Decisions` - Filter: Category = Career
+- `Financial Decisions` - Filter: Category = Financial  
+- `High Stakes` - Filter: Stakes = High
+- `Decision Quality` - Group by: Process Quality, Outcome Score
+
+**Use With:**
+- decision-tracker skill
+- weekly-review skill (reflect on decisions made)
+- life-analytics skill (decision patterns)
+
+---
