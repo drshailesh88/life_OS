@@ -1,0 +1,8 @@
+openbb>=4.0.0
+openbb-yfinance>=1.0.0
+openbb-fmp>=1.0.0
+openbb-alpha-vantage>=1.0.0
+requests>=2.31.0
+mcp>=0.1.0
+pandas>=2.0.0
+numpy>=1.24.0
